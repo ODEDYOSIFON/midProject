@@ -1,0 +1,66 @@
+<html>
+<head>
+  
+    <link href= "public/stylesheets/styles.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <table id="btnsTable">
+        <tr>
+            <td ><a href=/menu >Back to menu    </a></td>
+            <td><a href=/movies/search>Back to search   </a></td>
+            <td><a href=/login style="padding-left: 10px;">logout</a></td>
+        </tr>
+    </table>
+    
+    
+    
+
+  <br><br>
+    <table id="moviestable" border="1">
+
+        <tr>
+            <th >Movie Data</th>
+            <th>Related Movies</th>
+        </tr>
+        <% movies.forEach(function(movie) { %>
+            <tr>
+                <td><a href="/movies/view/<%= movie.id %>">
+                        <div>
+
+                            <img id="img<%= movie.id %>" onload="setimgVisibility('<%=[ movie.id,movie.hideImage] %>')"
+                                src="<%= movie.mediumImage %>" alt="<%= movie.name %>" width="50" height="50"><br />
+                            <%= movie.name %>
+                        </div>
+                    </a></td>
+
+                <td>
+
+                    <% movie.relatedMovies.forEach(function(movie) { %>
+                        <ul>
+
+                            <li><a href="/movies/view/<%= movie.id %>">
+                                    <%= movie.name %>
+                                </a></li>
+                        </ul>
+                        <% }) %>
+                </td>
+            </tr>
+            <% }) %>
+
+    </table>
+
+</body>
+<script type="text/javascript">
+    function setimgVisibility(mid, hideImage) {
+
+        var img = document.getElementById("img" + mid);
+
+        img.style.visibility = (hideImage ? 'hidden' : 'visible');
+
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="checkMessage('<%= msg %>')">
+  <h1 >movies Creation </h1>
+
+  <a href="/menu">Back to menu</a>   <br/><br/>
+  <form  action="/movies/create/save" method="POST">
+
+    Name : <input type="text" name="moviename"><br />
+    Language: <select name="Language" id="Language">
+      <option value=""></option>
+      <option value="English">English</option>
+      <option value="Japanese">Japanese</option>
+
+    </select><br />
+    Genre: <select name="Genre" id="Genre">
+      <option value=""></option>
+      <option value="Action">Action</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Drama">Drama</option>
+      <option value="Fantasy">Fantasy</option>
+      <option value="Horror">Horror</option>
+      <option value="Mystery">Mystery</option>
+      <option value="Romance">Romance</option>
+      <option value="Thriller">Thriller</option>
+      <option value="Western">Western</option>
+
+    </select><br />
+
+
+    <input type="submit" value="create">
+
+  </form>
+  <script>
+    function checkMessage(msg) {
+    if (msg!='') {
+      alert(msg);
+    }
+     
+    }
+  </script>
+</body>
+
+</html>

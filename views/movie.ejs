@@ -1,0 +1,75 @@
+<html>
+
+<body>
+    <!-- id: movie.id, name: movie.name, language: movie.language, genres: movie.genres, image: movie.image -->
+    <table border="1">
+        <tr>
+            <th>Movie Data</th>
+            <th>Related Movies</th>
+          </tr>
+        <tr>
+            <td>
+                <div>
+                <p> ID: <%= movie.id %>
+                </p>
+                <p> Name: <%= movie.name %>
+                </p>
+                <p> genres: <%= movie.genres %>
+                </p>
+            
+                <p> language: <%= movie.language %>
+                </p>
+                
+
+                    <img id="img<%= movie.id %>"
+                    onload="setimgVisibility('<%= movie %>')"
+                        src="<%= movie.image.medium %>" alt="<%= movie.name %>" width="150"
+                        height="150"> 
+                         <br />
+                    <%= movie.name %>
+                </div>
+            </td>
+            
+            <td>
+
+             <div>
+                 <table>
+                    <% relatedMovies.forEach(function(movie) { %>
+                        <tr>
+                            
+                         <td>
+                            <br/>
+                            <p>
+                            <a href="/movies/view/<%= movie.id %>">
+                                <img id="img<%= movie.id %>"
+                                onload="setimgVisibility('<%= movie %>')"
+                                    src="<%= movie.image.medium %>" alt="<%= movie.name %>" width="50"
+                                    height="50"> 
+                                     <br />
+                                <%= movie.name %>
+                                </p></a>
+                            </td> </tr>
+                        <% }) %>
+                 </table>
+             </div>
+            </td>
+        </tr>
+    </table>
+   
+
+
+</body>
+<script type="text/javascript">
+    function setimgVisibility(movie) {
+        
+        var img = document.getElementById("img" + movie.id);
+
+        img.style.visibility = (movie.image?.medium ?  'visible':'hidden' );
+
+
+    }
+
+</script>
+
+
+</html>

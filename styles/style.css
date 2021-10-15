@@ -1,0 +1,8 @@
+table#btnsTable td
+{
+    padding-left: 10px;
+}
+
+th{
+    color: tomato;
+}

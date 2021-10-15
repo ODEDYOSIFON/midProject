@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="checkMessage('<%= msg %>')">
+    <h1>create user </h1>
+
+
+    <form action="/users/usercreated" method="POST">
+     
+        <input type="hidden" id="userid" name="userid" value="">
+        User Name : <input type="text" name="username" value=""><br />
+        User Password : <input type="text" name="userpassword"  value=""><br />
+        Allowed Transactions per Day: <input type="text" name="usertransactions" value=""><br />
+        Role: <input type="text" name="userrole" value="" > <br />
+        <br><br>
+        <input type="submit" value="create User">
+
+    </form>
+    <br/>
+    <a href="/users/usersmanagement"> go to users management</a>
+     
+    <script>
+        function checkMessage(msg) {
+            if (msg != '') {
+                alert(msg);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

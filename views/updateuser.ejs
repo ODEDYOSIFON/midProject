@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="checkMessage('<%= msg %>')">
+    <h1>Update user </h1>
+
+
+    <form action="/users/userupdated" method="POST">
+        <table>
+            <tr>
+                <td>User Name :</td>
+                <td><input type="text" name="username" value="<%=user.username%>"></td>
+            </tr>
+            <tr>
+                <td>   User Password :</td>
+                <td> <input type="text" name="userpassword" value="<%=user.password%>"> </td>
+            </tr>
+            <tr>
+                <td>Allowed Transactions per Day: </td>
+                <td> <input type="text" name="usertransactions" value="<%=user.numOfTransactions%>"></td>
+            </tr>
+            <tr>
+                <td>Role:  </td>
+                <td> <input type="text" name="userrole" value="<%=user.role%>"></td>
+            </tr>
+        </table>
+        <input type="hidden" id="userid" name="userid" value="<%=user.id%>">
+         
+     
+        
+        
+        <br><br>
+        <input type="submit" value="Update User">
+
+    </form>
+    <br />
+    <a href="/users/usersmanagement"> go to users management</a>
+    <script>
+        function checkMessage(msg) {
+            if (msg != '') {
+                alert(msg);
+            }
+
+        }
+    </script>
+</body>
+
+</html>

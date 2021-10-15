@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ 
+  <body>
+    <h1>Movies search</h1>
+   
+    <a href="/menu">Back to menu</a>   <br/><br/>
+    <form action="/movies/searchresult" method="POST">
+      
+      Name : <br/>
+      <input type="text" name="moviename"><br/><br/>
+      Genre:<br/> <select  name="Genre" id="Genre">
+        <option value=""></option>
+        <option value="Action">Action</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Crime">Crime</option>
+        <option value="Drama">Drama</option>
+        <option value="Fantasy">Fantasy</option>
+        <option value="Horror">Horror</option>
+        <option value="Mystery">Mystery</option>
+        <option value="Romance">Romance</option>
+        <option value="Thriller">Thriller</option>
+        <option value="Western">Western</option>
+
+      </select><br/><br/>
+      Language: <br/><select name="Language" id="Language">
+        <option value=""></option>
+        <option value="English">English</option>
+        <option value="Japanese">Japanese</option>
+        
+      </select><br/>
+      <br/>
+      <input type="submit" value="search">
+
+  </form>
+
+  </body>
+</html>

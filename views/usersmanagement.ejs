@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <h2>Users Management</h2>
+     
+
+    <a href="/menu">Back to menu</a>   <br/><br/>
+    <table border="1">
+        <% users.forEach(function(user) { %>
+            <tr>
+
+                <td>
+                    <br />
+                    <p><%=user.username%>
+                            <BR></BR>
+
+                    </p>
+                </td>
+                <td><a href="/users/usersdata/<%= user.id %> "><button>Update user</button></a> <BR></BR>
+
+                    <a href="/users/deleteuser/<%=user.id%>"><button>Delete user</button></a>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+
+<br>
+    <a href="/users/usersdata/"><button>Add new user</button></a>
+    
+</body>
+
+</html>
